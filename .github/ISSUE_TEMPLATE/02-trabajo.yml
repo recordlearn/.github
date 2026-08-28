@@ -1,0 +1,41 @@
+name: Trabajo
+description: Una tarea dentro de un área. No toca el contrato.
+title: "[área] "
+labels: ["trabajo"]
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área
+      options:
+        - db
+        - worker
+        - mobile
+        - web
+        - plugin
+        - taller / infra
+    validations:
+      required: true
+
+  - type: textarea
+    id: que
+    attributes:
+      label: Qué hay que hacer
+    validations:
+      required: true
+
+  - type: textarea
+    id: terminado
+    attributes:
+      label: Cómo sabemos que está terminado
+      description: Observable, no "que funcione". Un comando que corre, una pantalla que muestra algo, un test que pasa.
+      placeholder: "El worker levanta una toma en `recorded`, la deja en `done`, y `pytest -q` pasa."
+    validations:
+      required: true
+
+  - type: input
+    id: depende
+    attributes:
+      label: Depende de
+      description: Número de issue, o "nada". Si depende de algo del contrato, primero abrí el cambio de contrato.
+      placeholder: "nada"

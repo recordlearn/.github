@@ -1,0 +1,36 @@
+name: Bug
+description: Algo que corre y hace lo que no debe.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Un bug sin forma de reproducirlo es una sospecha. Está bien abrirlo igual, pero decilo."
+
+  - type: textarea
+    id: pasa
+    attributes:
+      label: Qué pasa
+    validations:
+      required: true
+
+  - type: textarea
+    id: esperaba
+    attributes:
+      label: Qué esperabas que pasara
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Cómo se reproduce
+      description: Pasos, o el estado que lo dispara. Si no sabés, escribí "no lo pude reproducir".
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidencia
+    attributes:
+      label: Evidencia
+      description: Log, id de la toma, captura. Nunca claves ni tokens.

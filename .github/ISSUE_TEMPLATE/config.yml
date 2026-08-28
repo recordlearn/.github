@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: El contrato (spec)
+    url: https://github.com/recordlearn/plataforma/tree/main/spec
+    about: Antes de abrir nada, mirá si lo que necesitás ya está definido acá.
+  - name: Cómo trabajamos
+    url: https://github.com/recordlearn/.github/blob/main/CONTRIBUTING.md
+    about: Ramas, revisión, y qué significa que algo esté terminado.

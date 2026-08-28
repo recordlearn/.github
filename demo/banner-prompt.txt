@@ -1,0 +1,26 @@
+{
+  "type": "wide horizontal repository banner, 3:1 aspect ratio",
+  "style": "refined editorial print design, ink on warm paper, letterpress feel, flat vector with subtle paper grain texture, generous negative space, absolutely no gradients and no drop shadows, hairline rules used instead of borders",
+  "palette": {
+    "paper": "#F4F1EA warm cream, fills the entire canvas",
+    "ink": "#151310 near-black, used for type and line work",
+    "muted": "#8A8578 warm grey for secondary marks",
+    "accent_red": "#B5341F rubricator vermilion, used sparingly on exactly one element",
+    "accent_blue": "#2C4251 slate blue for the graph nodes"
+  },
+  "layout": {
+    "left_third": {
+      "wordmark": "the single lowercase word 'recordlearn' in a large elegant high-contrast serif typeface, ink black, tight letter-spacing, occupying the visual weight of this area",
+      "below_wordmark": "a thin horizontal hairline rule in warm grey, and beneath it the sentence 'De la voz en el aula al apunte que sirve.' set in small clean sans-serif, warm grey"
+    },
+    "right_two_thirds": {
+      "description": "a single continuous left-to-right visual transformation in three connected stages, drawn as clean flat line art on the cream paper, all three stages sitting on one shared invisible horizontal baseline, evenly spaced, connected by two thin horizontal arrows in warm grey",
+      "stage_1": "an audio waveform: about 30 thin vertical ink bars of varying heights forming a symmetric sound wave, small caption below in tiny monospace type reading 'voz'",
+      "stage_2": "a small page of written notes: a rectangle outlined with a hairline, containing 6 horizontal ink lines of varying length suggesting paragraphs of text, one of those lines drawn in vermilion red as the only red element in the entire image, small caption below in tiny monospace type reading 'texto'",
+      "stage_3": "a knowledge graph: 7 small circular nodes in slate blue connected by thin straight ink edges into a web, arranged organically not in a grid, small caption below in tiny monospace type reading 'apuntes'"
+    }
+  },
+  "typography_notes": "the wordmark is the largest element; the three lowercase captions 'voz', 'texto', 'apuntes' are tiny monospace and sit directly under their stage; all text is crisp and perfectly legible",
+  "background": "flat warm cream #F4F1EA with a very subtle uncoated-paper grain, no vignette, no gradient",
+  "mood": "calm, precise, editorial, like a diagram printed in a well-designed textbook"
+}

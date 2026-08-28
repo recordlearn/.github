@@ -1,0 +1,47 @@
+name: Cambio de contrato
+description: Cambiar el esquema, la API o una convención compartida. Nos afecta a los tres.
+title: "[spec] "
+labels: ["spec", "necesita-3-ojos"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Este es el único tipo de cambio que le puede romper el trabajo a otro.
+        Por eso lo revisamos los tres. Si el cambio es solo dentro de tu área,
+        no es esto — usá "Trabajo".
+
+  - type: textarea
+    id: que
+    attributes:
+      label: Qué querés cambiar
+      description: La forma nueva, concreta. Una columna, un endpoint, una convención de claves.
+      placeholder: "takes necesita una columna `origen` para distinguir grabación de subida manual."
+    validations:
+      required: true
+
+  - type: textarea
+    id: porque
+    attributes:
+      label: Por qué no se puede resolver dentro de tu área
+      description: Si se puede, no es un cambio de contrato.
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: afecta
+    attributes:
+      label: A quién le rompe el build
+      options:
+        - label: "db — migraciones y RLS"
+        - label: "worker — pipeline"
+        - label: "mobile"
+        - label: "web"
+        - label: "plugin de Obsidian"
+
+  - type: textarea
+    id: migracion
+    attributes:
+      label: Qué pasa con lo que ya existe
+      description: Filas, artefactos y clientes ya publicados. Si el cambio es destructivo, decilo acá.
+    validations:
+      required: true

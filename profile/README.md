@@ -66,6 +66,48 @@ Cuando medimos modelos para esto, el hallazgo fue incómodo: **los modelos más 
 
 Por eso el criterio de selección no es el índice de inteligencia. Es cuántas veces se inventa algo.
 
+## Dónde está cada cosa
+
+Cinco repositorios, pero **sólo dos son el producto**. Si venís llegando, entrá por ahí.
+
+```
+                    EL PRODUCTO
+   ┌──────────────────────────────────────────────┐
+   │                                              │
+   │   DB                    plataforma           │
+   │   la base de datos      el contrato,         │
+   │                         el worker            │
+   │        │                y las dos apps       │
+   │        └───── genera ──────> los tipos       │
+   │                                              │
+   └──────────────────────────────────────────────┘
+
+              recordlearn        el prototipo viejo
+              taller · .github   herramientas del equipo
+```
+
+| Repositorio | Qué hay adentro | Dueño |
+|---|---|---|
+| **`DB`** | El esquema, las migraciones, las políticas de acceso y el almacenamiento. De acá salen los tipos que consumen todos los clientes | José Antonio |
+| **`plataforma`** | `spec/` el contrato · `apps/worker/` el pipeline · `apps/mobile/` la app · `apps/web/` el dashboard | los tres |
+| **`recordlearn`** | **El MVP viejo.** Funciona y tiene clases reales adentro, pero **no es el producto y no se mejora.** Es el banco donde se prueba una idea antes de construirla bien | los tres |
+| **`taller`** | Ni producto ni código: las *skills* y comandos que comparten nuestros agentes de código, enlazadas a cada repo | los tres |
+| **`.github`** | Esta portada y las plantillas de issues y pull requests | los tres |
+
+### Por dónde empezar
+
+| Si venís a… | Entrá por |
+|---|---|
+| entender **qué se puede guardar y quién lo puede leer** | `DB` → `docs/DISENO-DB-AUTH-V2.md` |
+| escribir **código nuevo** de cualquier área | `plataforma` → `spec/` |
+| saber **por qué el sistema es así y no de la forma obvia** | `plataforma` → `docs/adr/` |
+| saber **qué toca ahora** | `plataforma` → `docs/etapas.md` |
+| ver una idea **corriendo con datos reales** | `recordlearn` |
+
+**La regla que evita el desorden:** del MVP viajan decisiones, nunca código. Lo que se aprende ahí se escribe como ADR en `plataforma`, y se implementa de nuevo sabiendo lo que ahora sabemos.
+
+---
+
 ## Cómo trabajamos
 
 Somos tres, y ninguno puede avanzar solo si cada uno inventa su propia versión de la verdad. Así que hay **un solo contrato** —el esquema de datos y las convenciones que lo rodean— y todo lo demás se deriva de ahí:

@@ -82,7 +82,7 @@ Cinco repositorios, pero **sólo dos son el producto**. Si venís llegando, entr
    │                                              │
    └──────────────────────────────────────────────┘
 
-              recordlearn        el prototipo viejo
+              recordlearn        el prototipo viejo, congelado
               taller · .github   herramientas del equipo
 ```
 
@@ -90,7 +90,7 @@ Cinco repositorios, pero **sólo dos son el producto**. Si venís llegando, entr
 |---|---|---|
 | **`DB`** | El esquema, las migraciones, las políticas de acceso y el almacenamiento. De acá salen los tipos que consumen todos los clientes | José Antonio |
 | **`plataforma`** | `spec/` el contrato · `apps/worker/` el pipeline · `apps/mobile/` la app · `apps/web/` el dashboard | los tres |
-| **`recordlearn`** | **El MVP viejo.** Funciona y tiene clases reales adentro, pero **no es el producto y no se mejora.** Es el banco donde se prueba una idea antes de construirla bien | los tres |
+| **`recordlearn`** | **El MVP viejo, congelado.** Demostró que la idea funcionaba y ya cumplió: no es el producto, no se mejora y no es fuente de verdad de nada. Su documentación está archivada; lo único vigente son las mediciones que sostienen la elección de modelo | los tres |
 | **`taller`** | Ni producto ni código: las *skills* y comandos que comparten nuestros agentes de código, enlazadas a cada repo | los tres |
 | **`.github`** | Esta portada y las plantillas de issues y pull requests | los tres |
 
@@ -102,7 +102,7 @@ Cinco repositorios, pero **sólo dos son el producto**. Si venís llegando, entr
 | escribir **código nuevo** de cualquier área | `plataforma` → `spec/` |
 | saber **por qué el sistema es así y no de la forma obvia** | `plataforma` → `docs/adr/` |
 | saber **qué toca ahora** | `plataforma` → `docs/etapas.md` |
-| ver una idea **corriendo con datos reales** | `recordlearn` |
+| ver **los números** detrás de la elección de modelo | `recordlearn` → `experimentos/` |
 
 **La regla que evita el desorden:** del MVP viajan decisiones, nunca código. Lo que se aprende ahí se escribe como ADR en `plataforma`, y se implementa de nuevo sabiendo lo que ahora sabemos.
 

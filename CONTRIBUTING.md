@@ -26,7 +26,7 @@ Ser dueño de un área significa dos cosas: **decidís cómo se hace por dentro*
 | Área | Dueño | Decide |
 |---|---|---|
 | `spec/` | **los tres** | Nada entra sin tres aprobaciones |
-| `db/` | **José Antonio** | Esquema, RLS, migraciones, seed, auth |
+| [`recordlearn/DB`](https://github.com/recordlearn/DB) *(repo aparte)* | **José Antonio** | Esquema, RLS, migraciones, seed, auth |
 | `apps/worker/` | **Said** | Pipeline, prompts, modelos, reintentos, costes |
 | `apps/mobile/`, `apps/web/` | **Mateo** | Clientes, estado local, offline, UI |
 | `packages/contrato/` | **generado** | Nadie. Sale del esquema |
@@ -46,8 +46,9 @@ Lo que **sí** es una dependencia: "necesito una columna que todavía no existe 
 Cada uno puede levantar **el sistema entero** en su máquina. No hay un entorno compartido del que dependa tu tarde.
 
 ```bash
-supabase start          # Postgres + Auth + Storage, desde db/migraciones
-supabase db reset       # aplica migraciones y carga db/seed.sql
+# desde el repo recordlearn/DB, no desde plataforma
+supabase start          # Postgres + Auth + Storage
+supabase db reset       # aplica supabase/migrations/ y carga supabase/seed.sql
 ```
 
 El seed no es decorativo: trae un usuario conocido, una clase, y **tomas en cada estado — incluida una fallada**. Eso es lo que te deja dibujar la pantalla de error sin pedirle a nadie que rompa algo a mano.
@@ -103,7 +104,8 @@ En el PR va **el comando que corriste y lo que devolvió**. Pegado, no descrito.
 
 - **Tu área, cambio interno:** una aprobación. La de quien tenga tiempo.
 - **Área de otro:** la aprobación del dueño. GitHub la pide solo.
-- **`spec/` o `db/`:** los tres. Sin excepción, y sin "después lo miro".
+- **`spec/` o el esquema en `recordlearn/DB`:** los tres. Sin excepción, y sin
+  "después lo miro".
 
 Revisar no es buscar errores de estilo — eso lo hace el linter. Es responder una pregunta: **¿esto le va a romper algo a alguien dentro de dos semanas?**
 

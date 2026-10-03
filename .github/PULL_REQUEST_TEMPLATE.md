@@ -8,7 +8,7 @@ Closes #
 
 ## Área
 
-<!-- Marcá solo las que tocás. Si marcás `spec`, esto lo revisamos los tres. -->
+<!-- Marcá solo las que tocás. Si marcás `spec` o `recordlearn/DB`, avisá en el chat del equipo y esperá el OK de los tres antes de mergear. -->
 
 - [ ] `spec` — el contrato compartido
 - [ ] `apps/worker`

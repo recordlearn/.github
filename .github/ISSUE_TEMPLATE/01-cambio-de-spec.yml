@@ -7,8 +7,8 @@ body:
     attributes:
       value: |
         Este es el único tipo de cambio que le puede romper el trabajo a otro.
-        Por eso lo revisamos los tres. Si el cambio es solo dentro de tu área,
-        no es esto — usá "Trabajo".
+        Por eso no entra sin el OK de los tres en el chat del equipo. Si el
+        cambio es solo dentro de tu área, no es esto — usá "Trabajo".
 
   - type: textarea
     id: que

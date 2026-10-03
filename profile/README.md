@@ -42,11 +42,11 @@ Un ecosistema donde el audio de una clase termina siendo **material de estudio r
 
 Tres superficies, cada una con un trabajo:
 
-| Superficie | Para qué | Estado |
-|---|---|---|
-| **App móvil** | Grabar la clase y ver cómo avanza el procesamiento | Funciona, en pruebas |
-| **Dashboard web** | Ver todo: transcripciones, resúmenes, apuntes, uso | Funciona, en pruebas |
-| **Plugin de Obsidian** | Bajar los apuntes a tu vault, con el grafo ya armado | Funciona, sin publicar |
+| Superficie | Para qué |
+|---|---|
+| **App móvil** | Grabar la clase y ver cómo avanza el procesamiento |
+| **Dashboard web** | Ver todo: transcripciones, resúmenes, apuntes, uso |
+| **Plugin de Obsidian** | Bajar los apuntes a tu vault, con el grafo ya armado |
 
 ## Dos flujos, no uno
 
@@ -111,13 +111,13 @@ Somos tres, y ninguno puede avanzar solo si cada uno inventa su propia versión 
 
 - Los tipos del cliente se **generan** del esquema. No se escriben a mano.
 - Cada uno puede levantar el sistema entero en su máquina y trabajar sin esperar a nadie.
-- Cambiar el contrato es un pull request que revisan los tres. Es la única fricción, y está donde tiene que estar.
+- Cambiar el contrato es un pull request que no entra sin el sí de los tres. Es la única fricción, y está donde tiene que estar.
 
 Lo escribimos primero, lo implementamos después, y el spec evoluciona con el proyecto en vez de quedar viejo en la segunda semana.
 
 ## Estado
 
-**Funciona de punta a punta en un entorno de pruebas**: grabar, subir, transcribir, resumir y bajar los apuntes al vault. Falta el cobro para abrirlo a usuarios.
+**En desarrollo.** Qué toca ahora está en `plataforma` → `docs/etapas.md`.
 
 El MVP con el que empezamos está archivado (`recordlearn`): demostró la idea y no es fuente de verdad de nada.
 

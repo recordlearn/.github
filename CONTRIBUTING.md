@@ -68,9 +68,9 @@ spec/origen-de-la-toma
 Los commits dicen **qué cambia para quien usa el sistema**, no qué archivos tocaste.
 
 ```
-✅ fix: una toma que falla por red vuelve a la cola en vez de morir
-✅ feat: el worker reclama las tomas colgadas de un worker muerto
-❌ fix: runner.go
+✅ worker: una toma que falla por red vuelve a la cola en vez de morir
+✅ El worker reclama las tomas colgadas de un worker muerto
+❌ runner.go
 ❌ cambios varios
 ❌ wip
 ```
@@ -108,7 +108,7 @@ Revisar no es buscar errores de estilo — eso lo hace el linter. Es responder u
 - IPs de servidores, identificadores de proyecto, rutas de infraestructura.
 - Audio o transcripciones de una clase real. Es la voz de un profesor que no eligió estar en un repo.
 
-Los `.env` viven fuera del árbol y cada repo trae su `.env.example` con los nombres y sin los valores.
+Los `.env` no se commitean; cada app de `plataforma` trae su `.env.example` con los nombres y sin los valores.
 
 Si algo de esto se te escapó: **avisá antes de arreglarlo**. Rotar una clave filtrada es rápido; descubrirla en tres meses no.
 

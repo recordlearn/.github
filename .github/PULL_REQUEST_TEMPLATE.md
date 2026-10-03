@@ -2,7 +2,9 @@
 
 <!-- Una o dos frases. Qué hace el sistema ahora que antes no hacía. -->
 
-Cierra #
+<!-- En inglés a propósito: GitHub sólo cierra la issue con «Closes». «Cierra» no cierra nada. -->
+
+Closes #
 
 ## Área
 
@@ -13,6 +15,8 @@ Cierra #
 - [ ] `apps/mobile`
 - [ ] `apps/web`
 - [ ] `packages/contrato` (¿generado o escrito a mano? si es a mano, algo está mal)
+- [ ] `recordlearn/DB` — esquema, migraciones, RLS
+- [ ] `obsidian` — el plugin
 
 ## Cómo lo probaste
 

@@ -1,3 +1,4 @@
+<!-- Público: lo lee cualquiera. Nada de proveedores, precios, identificadores de proyecto ni direcciones de servidores. -->
 <div align="center">
 
 <img src="https://raw.githubusercontent.com/recordlearn/.github/main/demo/banner.png" alt="recordlearn — de la voz en el aula al apunte que sirve: audio grabado en clase que se transcribe, se resume y se convierte en apuntes enlazados" width="100%"/>
@@ -8,7 +9,7 @@
 
 <table>
 <tr>
-<td align="center"><strong>4</strong><br/><sub>superficies</sub></td>
+<td align="center"><strong>3</strong><br/><sub>superficies</sub></td>
 <td align="center"><strong>2</strong><br/><sub>flujos</sub></td>
 <td align="center"><strong>3</strong><br/><sub>personas</sub></td>
 <td align="center"><strong>1</strong><br/><sub>contrato</sub></td>
@@ -34,23 +35,22 @@ Un ecosistema donde el audio de una clase termina siendo **material de estudio r
 ```
    grabar  ──>  transcribir  ──>  entender  ──>  apuntes que te sirven
      │                                                    │
-  el teléfono en el bolsillo,                    en Obsidian, con su grafo,
-  o el reloj cuando no                           sus conceptos enlazados
-  tengas el teléfono                             y sus tarjetas de repaso
+  el teléfono en el bolsillo                     en Obsidian, con su grafo,
+                                                 sus conceptos enlazados
+                                                 y sus tarjetas de repaso
 ```
 
-Cuatro superficies, cada una con un trabajo:
+Tres superficies, cada una con un trabajo:
 
 | Superficie | Para qué | Estado |
 |---|---|---|
-| **App móvil** | Grabar la clase y ver cómo avanza el procesamiento | En construcción |
-| **Dashboard web** | Ver todo: transcripciones, resúmenes, apuntes, uso | En construcción |
-| **Plugin de Obsidian** | Bajar los apuntes a tu vault, con el grafo ya armado | Diseño |
-| **Reloj** | El micrófono cuando no tenés el teléfono a mano | Apuesta a futuro |
+| **App móvil** | Grabar la clase y ver cómo avanza el procesamiento | Funciona, en pruebas |
+| **Dashboard web** | Ver todo: transcripciones, resúmenes, apuntes, uso | Funciona, en pruebas |
+| **Plugin de Obsidian** | Bajar los apuntes a tu vault, con el grafo ya armado | Funciona, sin publicar |
 
 ## Dos flujos, no uno
 
-**El diferido.** Grabás, subís, y el sistema trabaja mientras vos hacés otra cosa. Al rato están la transcripción, el resumen y la nota. Es el flujo que ya probamos en una clase real.
+**El diferido.** Grabás, subís, y el sistema trabaja mientras vos hacés otra cosa. Al rato están la transcripción, el resumen y la nota. Es el flujo que ya funciona.
 
 **El de en vivo.** La clase se escucha mientras ocurre. A medida que avanza van apareciendo los conceptos, las tarjetas de repaso, y las preguntas que el profesor tiró al aire.
 
@@ -64,11 +64,11 @@ Un apunte inventado es peor que no tener apunte. Si el modelo cita una fuente qu
 
 Cuando medimos modelos para esto, el hallazgo fue incómodo: **los modelos más capaces alucinaron más.** El que más mundo tiene adentro es el que más contamina un apunte con cosas que en esa clase nunca se dijeron.
 
-Por eso el criterio de selección no es el índice de inteligencia. Es cuántas veces se inventa algo.
+Por eso la fidelidad es una guarda: un modelo que inventa queda fuera, por más capaz o barato que sea. Entre los que pasan, elegimos por costo.
 
 ## Dónde está cada cosa
 
-Cinco repositorios, pero **sólo dos son el producto**. Si venís llegando, entrá por ahí.
+Cuatro repositorios activos, pero **sólo dos son el producto**. Si venís llegando, entrá por ahí.
 
 ```
                     EL PRODUCTO
@@ -82,29 +82,26 @@ Cinco repositorios, pero **sólo dos son el producto**. Si venís llegando, entr
    │                                              │
    └──────────────────────────────────────────────┘
 
-              recordlearn        el prototipo viejo, congelado
-              taller · .github   herramientas del equipo
+              obsidian           el plugin
+              .github            esta portada y las plantillas
 ```
 
 | Repositorio | Qué hay adentro | Dueño |
 |---|---|---|
 | **`DB`** | El esquema, las migraciones, las políticas de acceso y el almacenamiento. De acá salen los tipos que consumen todos los clientes | José Antonio |
 | **`plataforma`** | `spec/` el contrato · `apps/worker/` el pipeline · `apps/mobile/` la app · `apps/web/` el dashboard | los tres |
-| **`recordlearn`** | **El MVP viejo, congelado.** Demostró que la idea funcionaba y ya cumplió: no es el producto, no se mejora y no es fuente de verdad de nada. Su documentación está archivada; lo único vigente son las mediciones que sostienen la elección de modelo | los tres |
-| **`taller`** | Ni producto ni código: las *skills* y comandos que comparten nuestros agentes de código, enlazadas a cada repo | los tres |
+| **`obsidian`** | El plugin que baja los apuntes al vault. Privado hasta publicar la primera versión | Mateo |
 | **`.github`** | Esta portada y las plantillas de issues y pull requests | los tres |
 
 ### Por dónde empezar
 
 | Si venís a… | Entrá por |
 |---|---|
-| entender **qué se puede guardar y quién lo puede leer** | `DB` → `docs/DISENO-DB-AUTH-V2.md` |
+| entender **qué se puede guardar y quién lo puede leer** | `DB` → `README.md` |
 | escribir **código nuevo** de cualquier área | `plataforma` → `spec/` |
 | saber **por qué el sistema es así y no de la forma obvia** | `plataforma` → `docs/adr/` |
 | saber **qué toca ahora** | `plataforma` → `docs/etapas.md` |
-| ver **los números** detrás de la elección de modelo | `recordlearn` → `experimentos/` |
-
-**La regla que evita el desorden:** del MVP viajan decisiones, nunca código. Lo que se aprende ahí se escribe como ADR en `plataforma`, y se implementa de nuevo sabiendo lo que ahora sabemos.
+| ver **los números** detrás de la elección de modelo | `plataforma` → `docs/experimentos/` |
 
 ---
 
@@ -118,19 +115,11 @@ Somos tres, y ninguno puede avanzar solo si cada uno inventa su propia versión 
 
 Lo escribimos primero, lo implementamos después, y el spec evoluciona con el proyecto en vez de quedar viejo en la segunda semana.
 
-## De dónde venimos
-
-Esto no empieza de cero. Hubo un MVP monolítico que se probó en una clase real y funcionó: grabó, subió, transcribió, resumió y escribió una nota de Obsidian.
-
-También nos enseñó dónde estaban los problemas —los que solo aparecen cuando el sistema corre de verdad y no cuando uno lee su propio código—. Ese aprendizaje viaja al proyecto nuevo como decisiones documentadas.
-
-El código no. Ese se escribe otra vez, sabiendo lo que ahora sabemos.
-
 ## Estado
 
-**En construcción, y todavía no hay nada que instalar.** La idea está validada en una clase real; lo que estamos haciendo ahora es convertir un prototipo que funcionó en un sistema que aguante usuarios.
+**Funciona de punta a punta en un entorno de pruebas**: grabar, subir, transcribir, resumir y bajar los apuntes al vault. Falta el cobro para abrirlo a usuarios.
 
-Cuando el plugin de Obsidian esté listo va a ser público y va a vivir acá.
+El MVP con el que empezamos está archivado (`recordlearn`): demostró la idea y no es fuente de verdad de nada.
 
 ---
 

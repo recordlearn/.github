@@ -9,7 +9,6 @@ Cierra #
 <!-- Marcá solo las que tocás. Si marcás `spec`, esto lo revisamos los tres. -->
 
 - [ ] `spec` — el contrato compartido
-- [ ] `db` — migraciones, RLS, seed
 - [ ] `apps/worker`
 - [ ] `apps/mobile`
 - [ ] `apps/web`
@@ -24,7 +23,7 @@ Cierra #
 
 ## Checklist
 
-- [ ] No importo código de otra app. Solo de `packages/contrato`.
-- [ ] Si toqué el esquema, regeneré los tipos y están en el diff.
+- [ ] No importo código de otra app. Solo de `packages/*`.
+- [ ] Si dependo de un cambio de esquema, ya entró en `DB` y llegó por el PR de `sincronizar-tipos`.
 - [ ] Si agregué algo que cuesta plata, pasa por el servidor y no por el cliente.
 - [ ] No hay claves, tokens ni IPs en el diff.

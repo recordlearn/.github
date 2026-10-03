@@ -12,7 +12,7 @@ El contrato es el esquema de la base más las convenciones que lo rodean, y vive
 
 De esa regla salen dos consecuencias prácticas:
 
-1. Ninguna app importa código de otra app. Ni una función, ni un tipo, ni una constante. Si necesitás algo de otra área, o está en el contrato o hay que ponerlo en el contrato.
+1. Ninguna app importa código de otra app. Ni una función, ni un tipo, ni una constante. Lo compartido vive en `packages/` (`contrato`, `apunte`, `marca`, `vault`).
 2. Los tipos generados **no se editan a mano**. Si abriste `packages/contrato` para arreglar algo, el problema está en el esquema.
 
 Suena rígido. Es lo que hace que puedas trabajar un martes entero sin escribirle a nadie.
@@ -31,7 +31,7 @@ Ser dueño de un área significa dos cosas: **decidís cómo se hace por dentro*
 | `apps/mobile/`, `apps/web/` | **Mateo** | Clientes, estado local, offline, UI |
 | `packages/contrato/` | **generado** | Nadie. Sale del esquema |
 
-Lo aplica `CODEOWNERS`, no la buena voluntad. Si tocás el área de otro, GitHub le pide la revisión solo.
+`CODEOWNERS` le pide la revisión al dueño cuando tocás su área.
 
 ### Cómo se ve una dependencia real
 
@@ -43,23 +43,15 @@ Lo que **sí** es una dependencia: "necesito una columna que todavía no existe 
 
 ## Trabajar sin esperar a nadie
 
-Cada uno puede levantar **el sistema entero** en su máquina. No hay un entorno compartido del que dependa tu tarde.
+Cada uno puede levantar **el sistema entero** en su máquina. El entorno compartido es el staging, y nadie depende de él para trabajar.
 
 ```bash
 # desde el repo recordlearn/DB, no desde plataforma
-supabase start          # Postgres + Auth + Storage
-supabase db reset       # aplica supabase/migrations/ y carga supabase/seed.sql
+npm run local:iniciar   # Postgres + Auth + Storage
+npm run db:reiniciar    # aplica supabase/migrations/ y carga supabase/seed.sql
 ```
 
 El seed no es decorativo: trae un usuario conocido, una clase, y **tomas en cada estado — incluida una fallada**. Eso es lo que te deja dibujar la pantalla de error sin pedirle a nadie que rompa algo a mano.
-
-Si necesitás probar contra algo remoto sin tocar lo de los demás, usá una **rama de base de datos**. Son efímeras y son tuyas.
-
-### Y si lo que necesitás todavía no existe
-
-Cada puerto del contrato tiene un **doble en memoria**. Se comporta como el real, no habla con la red, y sirve para construir contra algo antes de que ese algo exista.
-
-Es cómo Said arma el worker sin tablas y cómo Mateo arma pantallas sin worker.
 
 ---
 
@@ -68,7 +60,6 @@ Es cómo Said arma el worker sin tablas y cómo Mateo arma pantallas sin worker.
 Ramas: `área/lo-que-hace`.
 
 ```
-db/tablas-de-entitlement
 worker/claim-atomico
 mobile/cola-en-disco
 spec/origen-de-la-toma
@@ -79,7 +70,7 @@ Los commits dicen **qué cambia para quien usa el sistema**, no qué archivos to
 ```
 ✅ fix: una toma que falla por red vuelve a la cola en vez de morir
 ✅ feat: el worker reclama las tomas colgadas de un worker muerto
-❌ fix: worker.py
+❌ fix: runner.go
 ❌ cambios varios
 ❌ wip
 ```
@@ -94,7 +85,7 @@ Un issue no se cierra porque el código esté escrito. Se cierra cuando **alguie
 
 Por eso todo issue de trabajo lleva un criterio observable. "Que funcione" no es criterio. Esto sí:
 
-> El worker levanta una toma en `recorded`, la deja en `done`, y `pytest -q` pasa.
+> El worker levanta una toma en `recorded`, la deja en `done`, y `go test ./...` pasa.
 
 En el PR va **el comando que corriste y lo que devolvió**. Pegado, no descrito.
 

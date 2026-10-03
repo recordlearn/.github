@@ -13,7 +13,7 @@ body:
         - mobile
         - web
         - plugin
-        - taller / infra
+        - infra
     validations:
       required: true
 
@@ -29,7 +29,7 @@ body:
     attributes:
       label: Cómo sabemos que está terminado
       description: Observable, no "que funcione". Un comando que corre, una pantalla que muestra algo, un test que pasa.
-      placeholder: "El worker levanta una toma en `recorded`, la deja en `done`, y `pytest -q` pasa."
+      placeholder: "El worker levanta una toma en `recorded`, la deja en `done`, y `go test ./...` pasa."
     validations:
       required: true
 

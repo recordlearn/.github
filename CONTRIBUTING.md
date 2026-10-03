@@ -25,13 +25,13 @@ Ser dueño de un área significa dos cosas: **decidís cómo se hace por dentro*
 
 | Área | Dueño | Decide |
 |---|---|---|
-| `spec/` | **los tres** | Nada entra sin tres aprobaciones |
+| `spec/` | **los tres** | Nada entra sin el OK de los tres |
 | [`recordlearn/DB`](https://github.com/recordlearn/DB) *(repo aparte)* | **José Antonio** | Esquema, RLS, migraciones, seed, auth |
 | `apps/worker/` | **Said** | Pipeline, prompts, modelos, reintentos, costes |
 | `apps/mobile/`, `apps/web/` | **Mateo** | Clientes, estado local, offline, UI |
 | `packages/contrato/` | **generado** | Nadie. Sale del esquema |
 
-`CODEOWNERS` le pide la revisión al dueño cuando tocás su área.
+`CODEOWNERS` le pide la revisión al dueño cuando tocás su área. En el plan que tenemos GitHub no la hace obligatoria: la pide, no la exige.
 
 ### Cómo se ve una dependencia real
 
@@ -93,9 +93,11 @@ En el PR va **el comando que corriste y lo que devolvió**. Pegado, no descrito.
 
 ## Revisión
 
-- **Tu área, cambio interno:** una aprobación. La de quien tenga tiempo.
-- **Área de otro:** la aprobación del dueño. GitHub la pide solo.
-- **`spec/` o el esquema en `recordlearn/DB`:** los tres. Sin excepción, y sin
+- **Tu área, cambio interno:** una aprobación, la de quien tenga tiempo.
+- **Área de otro:** el dueño. `CODEOWNERS` le pide la revisión; GitHub no bloquea
+  el merge, así que esperala igual.
+- **`spec/` o el esquema en `recordlearn/DB`:** lo avisás en el PR y en el chat
+  del equipo, y no se mergea hasta que los tres dijeron que sí ahí. Sin
   "después lo miro".
 
 Revisar no es buscar errores de estilo — eso lo hace el linter. Es responder una pregunta: **¿esto le va a romper algo a alguien dentro de dos semanas?**
